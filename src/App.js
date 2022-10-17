@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { useState } from "react";
+import Questions from "./components/Questions";
 function App() {
+  let [isStarted, setIsStarted] = useState(false);
+
+  console.log("app generated");
+
+  function toggleQuiz() {
+    setIsStarted((x) => !x);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {isStarted ? (
+        <Questions isStarted={isStarted} toggleQuiz={toggleQuiz} />
+      ) : (
+        <div className="start-page">
+          <h1 className="start-title">Quizzical</h1>
+          <p className="start-desc">Some description if needed</p>
+          <button className="btn-start" onClick={toggleQuiz}>
+            Start Quiz
+          </button>
+        </div>
+      )}
     </div>
   );
 }

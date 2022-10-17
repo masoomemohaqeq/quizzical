@@ -1,13 +1,117 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root{
+  --lightColor:#d3cfed;
+  --darkColor:#5d5791;
+  --font:'lateef', serif;
+}
+html {
+  font-size:20px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: lateef;
+  src: url(fonts/Lateef-Medium.ttf);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  color: var(--darkColor);
+}
+
+.App{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.start-page{
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height:100vh; */
+  text-align: center;
+}
+
+.start-title{
+  font-size:2.5rem;
+  margin: 0 auto;
+}
+
+.start-desc{
+  font-weight: 100;
+  margin: 0 auto;
+}
+
+button{
+  background-color: var(--darkColor);
+  color: white;
+  border-radius: 10px;
+  padding: 10px 50px;
+  border: none;
+  font-family:  var(--font);
+  font-size: 1rem;
+  margin: auto;
+}
+
+.btn-start{
+  margin-top: 30px;
+}
+
+.loading{
+  width: 100px;
+}
+
+.all-questions{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.question{
+  font-weight: bold;
+}
+
+.answer{
+  border:1px solid var(--darkColor);
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.selected{
+  background-color: var(--lightColor);
+  border-color: transparent;
+}
+
+.correct{
+  border-color: transparent;
+  background-color: rgb(116, 235, 161);
+}
+
+.incorrect{
+  border-color: transparent;
+  background-color: rgb(240, 150, 150);
+  color: #7a769f;
+}
+
+.disable{
+  opacity: 0.5;
+}
+
+hr{
+  margin-top: 20px;
+  border-top: 1px solid var(--lightColor);
+}
+
+.score-box{
+  text-align: center;
+}
+
+.score-text{
+  margin-right: 20px;
+  display: inline-block;
 }
